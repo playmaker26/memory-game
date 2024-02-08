@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background-color: #e6f7f5;
+}
+
+header {
+  text-align: center;
+  background-color: #ff0000;
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+  font-family: "Press Start 2P", cursive; /* Pixelated font */
+  font-size: 36px;
+}
+
+header .game-info {
+  margin-top: 20px;
+}
+
+header .game-info p {
+  margin: 8px 0;
+}
+
+header .game-info button {
+  margin-top: 10px;
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+header .game-info button:hover {
+  background-color: #ffb300;
+}
+
+header .game-info label {
+  margin-right: 8px;
+}
+
+header .game-info select {
+  padding: 8px;
+  font-size: 16px;
+}
+
+main #match-result {
+  font-weight: bold;
+  color: #6fd251;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 24px;
+}
+
+.memory-game {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  position: relative;
+  margin: 5px;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}

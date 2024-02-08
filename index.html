@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Enjoy a fun and challenging memory card game. Match pairs of cards and test your memory skills."
+    />
+    <meta
+      name="keywords"
+      content="memory game, card matching, puzzle game, memory challenge, concentration game"
+    />
+    <meta name="author" content="Jorge Artaza" />
+    <link rel="shortcut icon" href="img/front-face.png" type="image/.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Memory Game</title>
+  </head>
+  <body>
+    <header>
+      <h1>Super Mario Memory Game</h1>
+      <section class="game-info">
+        <p>Turns: <span id="turn-counter">0</span></p>
+        <p>Time: <span id="timer">0:00</span></p>
+        <button onclick="resetGame()" id="restart-button">Restart Game</button>
+        <label for="difficulty">Difficulty</label>
+        <select id="difficulty" onchange="shuffle()">
+          <option value="none">None</option>
+          <option value="easy">Easy</option>
+          <option value="hard">Hard</option>
+        </select>
+      </section>
+    </header>
+
+    <main>
+      <p id="match-result"></p>
+      <section class="memory-game">
+        <div class="memory-card" data-character="boo">
+          <img src="img/boo.png" alt="boo" class="front-face" />
+          <img
+            src="img/front-face.png"
+            alt="super mario question mark block"
+            class="back-face"
+          />
+        </div>
+        <div class="memory-card" data-character="boo">
+          <img src="img/boo.png" alt="boo" class="front-face" />
+          <img
+            src="img/front-face.png"
+            alt="super mario question mark block"
+            class="back-face"
+          />
+        </div>
+        <div class="memory-card" data-character="bowser">
+          <img src="img/bowser.png" alt="bowser" class="front-face" />
+          <img
+            src="img/front-face.png"
+            alt="super mario question mark block"
+            class="back-face"
+          />
+        </div>
+        <div class="memory-card" data-character="bowser">
+          <img src="img/bowser.png" alt="bowser" class="front-face" />
+          <img
+            src="img/front-face.png"
+            alt="super mario question mark block"
+            class="back-face"
+          />
+        </div>
+        <div class="memory-card" data-character="koopa">
+          <img src="img/koopa.png" alt="koopa" class="front-face" />
+          <img
+            src="img/front-face.png"
+            alt="super mario question mark block"
+            class="back-face"
+          />
+        </div>
+        <div class="memory-card" data-character="koopa">
+          <img src="img/koopa.png" alt="koopa" class="front-face" />
+          <img
+            src="img/front-face.png"
+            alt="super mario question mark block"
+            class="back-face"
+          />
+        </div>
+        <div class="memory-card" data-character="luigi">
+          <img src="img/luigi.png" alt="luigi" class="front-face" />
+          <img
+            src="img/front-face.png"
+            alt="super mario question mark block"
+            class="back-face"
+          />
+        </div>
+        <div class="memory-card" data-character="luigi">
+          <img src="img/luigi.png" alt="luigi" class="front-face" />
+          <img
+            src="img/front-face.png"
+            alt="super mario question mark block"
+            class="back-face"
+          />
+        </div>
+        <div class="memory-card" data-character="mario">
+          <img src="img/mario.png" alt="mario" class="front-face" />
+          <img
+            src="img/front-face.png"
+            alt="super mario question mark block"
+            class="back-face"
+          />
+        </div>
+        <div class="memory-card" data-character="mario">
+          <img src="img/mario.png" alt="mario" class="front-face" />
+          <img
+            src="img/front-face.png"
+            alt="super mario question mark block"
+            class="back-face"
+          />
+        </div>
+        <div class="memory-card" data-character="yoshi">
+          <img src="img/yoshi.png" alt="yoshi" class="front-face" />
+          <img
+            src="img/front-face.png"
+            alt="super mario question mark block"
+            class="back-face"
+          />
+        </div>
+        <div class="memory-card" data-character="yoshi">
+          <img src="img/yoshi.png" alt="yoshi" class="front-face" />
+          <img
+            src="img/front-face.png"
+            alt="super mario question mark block"
+            class="back-face"
+          />
+        </div>
+      </section>
+    </main>
+    <audio id="background-music" loop>
+      <source src="sounds/main-song.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="winning-music" loop>
+      <source src="sounds/winning-game.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="wrong-match">
+      <source src="sounds/wrong-match.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="paired-match-boo">
+      <source src="sounds/boo.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="paired-match-bowser">
+      <source src="sounds/bowser.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="paired-match-koopa">
+      <source src="sounds/koopa.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="paired-match-luigi">
+      <source src="sounds/luigi.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="paired-match-mario">
+      <source src="sounds/mario.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="paired-match-yoshi">
+      <source src="sounds/yoshi.mp3" type="audio/mp3" />
+    </audio>
+    <script src="js/script.js"></script>
+  </body>
+</html>
